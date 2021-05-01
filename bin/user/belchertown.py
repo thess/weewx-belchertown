@@ -502,6 +502,11 @@ class getData(SearchList):
         else:
             radar_html_dark = self.generator.skin_dict["Extras"]["radar_html_dark"]
 
+        # Add webcam image and target page info (overlay text is optional)
+        webcam_target = self.generator.skin_dict["Extras"]["webcam_target"]
+        webcam_image = self.generator.skin_dict["Extras"]["webcam_image"]
+        webcam_overlay = self.generator.skin_dict["Extras"]["webcam_overlay"]
+
         # ==============================================================================
         # Build the all time stats.
         # ==============================================================================
@@ -2095,6 +2100,9 @@ class getData(SearchList):
             "highcharts_thousands": highcharts_thousands,
             "radar_html": radar_html,
             "radar_html_dark": radar_html_dark,
+            "webcam_target": webcam_target,
+            "webcam_image": webcam_image,
+            "webcam_overlay": webcam_overlay,
             "archive_interval_ms": archive_interval_ms,
             "ordinate_names": ordinate_names,
             "charts": json.dumps(charts),

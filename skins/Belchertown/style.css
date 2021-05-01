@@ -832,6 +832,55 @@ p.entry-meta {
     color: #e5554e;
 }
 
+/* # Custom RADAR tabs
+---------------------------------------------------------------------------------------------------- */
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #333;
+  background-color: #666;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0px 5px;
+  transition: 0.3s;
+  font-size: 12px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #333;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #666;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+}
+
+.webcam_image {
+  height: 340px;
+  width: auto;
+}
+
+.overlay_centered {
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */

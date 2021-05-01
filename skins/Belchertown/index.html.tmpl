@@ -406,7 +406,43 @@
                     
                     <!-- Radar image -->
                     <div class="col-lg-5 radar-map toprow-height">
-                        <div class="radar_image">$radar_html</div>
+                    <!-- Custom tabs for webcam, etc. -->
+                    <div class="tab">
+                      <button class="tablinks" onclick="openPanel(event, 'Radar')" id="defaultOpen">Radar</button>
+                      <button class="tablinks" onclick="openPanel(event, 'Webcam')">Webcam</button>
+                    </div>
+
+                    <div id="Radar" class="tabcontent">
+                      <div class="radar_image">$radar_html</div>
+                    </div>
+
+                    <div id="Webcam" class="tabcontent">
+                      <div class="webcam_image">
+                        <a href="$webcam_target" target="_blank">
+                          <img src="$webcam_image" style="height: 100%; width: 100%; object-fit: contain">
+                          <div class="overlay_centered">$webcam_overlay</div>
+                        </a>
+                      </div>
+                    </div>
+                    <script>
+                        function openPanel(evt, panel) {
+                          var i, tabcontent, tablinks;
+                          tabcontent = document.getElementsByClassName("tabcontent");
+                          for (i = 0; i < tabcontent.length; i++) {
+                            tabcontent[i].style.display = "none";
+                          }
+                          tablinks = document.getElementsByClassName("tablinks");
+                          for (i = 0; i < tablinks.length; i++) {
+                            tablinks[i].className = tablinks[i].className.replace(" active", "");
+                          }
+                          document.getElementById(panel).style.display = "block";
+                          evt.currentTarget.className += " active";
+                        }
+
+                        // Get the element with id="defaultOpen" and click on it
+                        document.getElementById("defaultOpen").click();
+                    </script>
+                    <!-- End of time-lapse customization -->
                     </div>
                 </div>
                 <!-- End of first row -->
