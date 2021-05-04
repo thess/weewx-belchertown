@@ -113,6 +113,11 @@
                     setTimeout(function() { ajaximages("radar", $Extras.reload_images_radar); }, reload_radar_timer);
                 #end if
             
+                #if $Extras.has_key("reload_images_webcam") and $Extras.reload_images_webcam != '-1'
+                    var reload_webcam_timer = $Extras.reload_images_webcam * 1000; // convert to millis
+                    setTimeout(function() { ajaximages("webcam_image", $Extras.reload_images_webcam); }, reload_webcam_timer);
+                #end if
+
                 #if $Extras.has_key("reload_images_hook_asi") and $Extras.reload_images_hook_asi != '-1'
                     var reload_asi_timer = $Extras.reload_images_hook_asi * 1000; // convert to millis
                     setTimeout(function() { ajaximages("index-hook-after-station-info", $Extras.reload_images_hook_asi); }, reload_asi_timer);
